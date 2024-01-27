@@ -1,16 +1,22 @@
-import React from 'react';
-import Header1 from '../components/Header1'; // Ensure the path to Header1 component is correct
-import LeftComponent from '../components/LeftComponent'; // Adjust the path as necessary
-import RightComponent from '../components/RightComponent'; // Adjust the path as necessary
-import './MainPage.css'; // Import the CSS for MainPage
+import React, { useState } from 'react';
+import Header1 from '../components/Header1';
+import LeftComponent from '../components/LeftComponent';
+import RightComponent from '../components/RightComponent';
+import './MainPage.css';
 
 const MainPage = () => {
+  const [chatInput, setChatInput] = useState('');
+
+  const handleTextCopy = (copiedText) => {
+    setChatInput(copiedText);
+  };
+
   return (
     <div className="main-page">
       <Header1/>
       <div className="content">
-        <LeftComponent />
-        <RightComponent />
+        <LeftComponent onTextCopy={handleTextCopy} />
+        <RightComponent chatInput={chatInput} updateChatInput={setChatInput} />
       </div>
     </div>
   );

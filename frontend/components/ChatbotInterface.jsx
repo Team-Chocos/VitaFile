@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import './ChatbotInterface.css'; // Make sure to add appropriate CSS
 
-const ChatbotInterface = () => {
+const ChatbotInterface = ({ chatInput, updateChatInput }) => {
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
 
   const handleSendMessage = () => {
-    if (input.trim()) {
-      setMessages([...messages, { text: input, sender: 'user' }]);
-      setInput(''); // Clear input after sending
+    if (chatInput.trim()) {
+      setMessages([...messages, { text: chatInput, sender: 'user' }]);
+      updateChatInput(''); // Clear input after sending
     }
   };
 
@@ -35,13 +30,11 @@ const ChatbotInterface = () => {
       </div>
       <div className="chat-input-container">
         <textarea
-          value={input}
-          onChange={handleInputChange}
+          value={chatInput}
+          onChange={(e) => updateChatInput(e.target.value)}
           placeholder="Type your message..."
           className="chat-input"
           onKeyPress={handleKeyPress}
-          // Adjusted style for better visibility
-          style={{ minHeight: '10px', maxHeight: '100px', width: 'calc(100% - 20px)' }}
         ></textarea>
         <button onClick={handleSendMessage} className="send-button">
           Send
