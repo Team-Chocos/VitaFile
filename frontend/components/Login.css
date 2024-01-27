@@ -58,16 +58,17 @@ h1 {
 }
 
 .logo {
-    width: 25px; /* Further reduce the size of the logo */
-    height: 30px; /* Keep the height the same as the width to maintain the circular shape */
-    border-radius: 50%;
+    width: 100px; /* Further reduce the size of the logo */
+    height: 100px; /* Keep the height the same as the width to maintain the circular shape */
+    border-radius: 90%;
+    margin-right: auto;
      /* Reduce the padding */
 }
 
 .logo-text {
     font-size: 14px; /* Reduce the font size of the text */
-    margin-left: 0; /* Reset the margin-left */
-    text-align: center; /* Center align the text */
+    margin-left: 10px; /* Reset the margin-left */
+    /* text-align: center; Center align the text */
 }
 
 .login-form {
