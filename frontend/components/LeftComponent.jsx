@@ -1,9 +1,11 @@
+// LeftComponent.jsx
+
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import './LeftComponent.css'; // Ensure this is the correct path to your CSS file
+import './LeftComponent.css'; // Make sure the path is correct
 
-const LeftComponent = () => {
+const LeftComponent = ({ onTextSelect }) => {
   const markdown = `
   *Patient Information*
   - Name: Mr. SHORYA DWIVEDI
@@ -29,10 +31,17 @@ const LeftComponent = () => {
   
   *Associated Test*
   - Free T3 (Triiodothyronine) and Free T4 (Thyroxine) Tests: These tests measure the actual levels of thyroid hormones circulating in the blood and are often used in conjunction with TSH to assess thyroid function more comprehensively.
-`;
+  `;
+
+  const handleTextSelect = () => {
+    const selectedText = window.getSelection().toString();
+    if (selectedText) {
+      onTextSelect(selectedText); // Use onTextSelect to handle the selected text
+    }
+  };
 
   return (
-    <div className="left-container">
+    <div className="left-container" onMouseUp={handleTextSelect}>
       <ReactMarkdown children={markdown} rehypePlugins={[rehypeRaw]} />
     </div>
   );
