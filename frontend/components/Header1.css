@@ -1,59 +1,53 @@
 header {
     position: fixed;
     top: 0;
-    left: 20%;
-    height: 10%;
-    right: 0;
+    left: 0;
+    width: 100%; /* Full width */
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between; /* Space out logo and header-right */
+    padding: 10px 20px; /* Padding on top/bottom and left/right */
     background-color: #ffffff;
-}
-
-.search-container {
+    z-index: 10; /* Ensures the header is above other content */
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  
+  .logo-container {
     display: flex;
     align-items: center;
-    width: 55%; /* Adjusted width */
-}
-.person-name-container {
+    justify-content: flex-start; /* Align logo to the start */
+  }
+  
+  .header-logo {
+    height: 50px; /* Fixed height for logo */
+    width: auto; /* Width will scale automatically */
+    object-fit: contain; /* Ensures image is scaled correctly */
+  }
+  
+  /* ... (Rest of your CSS to style search container, icons, etc.) ... */
+  
+  
+  /* ... (Rest of your CSS to style search container, icons, etc.) ... */
+  
+  .search-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 15%; /* New container for person's name */
-    margin: 0 10px; /* Add margin if needed */
-}
-.person-name {
-    font-size: 16px;
-    color: #333;
-    /* You can add more styles if needed */
-}
-
-.search-input {
-    margin-left: 2%;
-    flex-grow: 1; 
+    flex-grow: 1; /* Allow search container to take up remaining space */
+    margin-left: 20px;
+  }
+  
+  .search-input {
+    flex-grow: 1;
     padding: 10px;
+    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 20px;
     outline: none;
     background-color: #ffffff;
     color: #333;
-    width: 100%; 
-}
-
-/* ... rest of your CSS ... */
-
-
-
-.search-icon {
-    width: 30px;
-    height: auto;
-    background-color: #ddd;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 0 20px 20px 0;
-}
-
-.search-button {
+  }
+  
+  .search-button {
     background: none;
     border: none;
     cursor: pointer;
@@ -61,21 +55,36 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.header-right {
+  }
+  
+  .search-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .person-name-container {
+    margin: 0 20px;
+    flex: 0 1 auto; /* Do not allow the name container to grow but allow it to shrink if necessary */
+  }
+  
+  .person-name {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .header-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-}
-
-.date-display {
+    justify-content: center;
+    flex: 0 1 auto; /* Do not allow the right container to grow but allow it to shrink if necessary */
+  }
+  
+  .date-display {
     margin-right: 20px;
     font-size: 16px;
-}
-
-.icon-button {
+  }
+  
+  .icon-button {
     background: none;
     border: none;
     cursor: pointer;
@@ -83,12 +92,10 @@ header {
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-    padding: 5px 10px; 
-    font-size: 14px; 
-}
-
-
-.icon-button img {
-    width: 20px;
-    height: auto;
-}
+  }
+  
+  .icon-button img {
+    width: 20px; /* Fixed width for icons */
+    height: 20px; /* Fixed height for icons */
+  }
+  
