@@ -4,7 +4,6 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import './LeftComponent.css'; // Make sure the path is correct
-
 const LeftComponent = ({ onTextSelect }) => {
   const markdown = `
   *Patient Information*
