@@ -1,49 +1,42 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css'; // Importing the CSS file
+import logo from '../src/assets/logo.png'; //
 import searchIcon from '../src/assets/search.png'; 
 import messageIcon from '../src/assets/1.png'; 
 import alertIcon from '../src/assets/2.png'; 
 import exitIcon from '../src/assets/3.png'; 
 
 const Header = ({ toggleSidebar }) => {
+  const navigate = useNavigate();
+
   const handleSearch = () => {
     // Logic to handle search functionality
     console.log("Search initiated");
   };
 
-  const navigate = useNavigate();
-
-  const Handleexitnavigation = () => {
-    localStorage.removeItem('token');  
-    navigate('/');
-  };
-
   const handleExitClick = async () => {
     const token = localStorage.getItem('token');  
 
-    const response = await fetch('http://localhost:8000/getuser/', {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-    });
+    if (token) {
+      const response = await fetch('http://localhost:8000/getuser/', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
 
-    if (response.ok) {
-      const name = await response.text();
-      console.log('Name:', name);
-    } else {
-      console.error('Error:', response.status);
+      if (response.ok) {
+        const name = await response.text();
+        console.log('Name:', name);
+      } else {
+        console.error('Error:', response.status);
+      }
     }
 
     localStorage.removeItem('token');  
     navigate('/');
   };
-
-  
-  <button className="icon-button exit-icon" onClick={handleExitClick}>
-    <img src={exitIcon} alt="Exit" />
-  </button>
 
   // Function to format the current date
   const formatDate = () => {
@@ -61,7 +54,7 @@ const Header = ({ toggleSidebar }) => {
           <img src={searchIcon} alt="Search" className="search-icon" />
         </button>
       </div>
-      <div className="person-name-container"> {/* New div for person's name */}
+      <div className="person-name-container">
         <span className="person-name">{personName}</span>
       </div>
       <div className="header-right">
@@ -72,7 +65,7 @@ const Header = ({ toggleSidebar }) => {
         <button className="icon-button alert-icon">
           <img src={alertIcon} alt="Alert" />
         </button>
-        <button className="icon-button exit-icon" onClick={Handleexitnavigation}>
+        <button className="icon-button exit-icon" onClick={handleExitClick}>
           <img src={exitIcon} alt="Exit" />
         </button>
       </div>

@@ -18,16 +18,7 @@ header {
     justify-content: flex-start; /* Align logo to the start */
   }
   
-  .header-logo {
-    height: 50px; /* Fixed height for logo */
-    width: auto; /* Width will scale automatically */
-    object-fit: contain; /* Ensures image is scaled correctly */
-  }
   
-  /* ... (Rest of your CSS to style search container, icons, etc.) ... */
-  
-  
-  /* ... (Rest of your CSS to style search container, icons, etc.) ... */
   
   .search-container {
     display: flex;
