@@ -5,12 +5,18 @@ header {
     width: 100%; /* Full width */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out logo and header-right */
-    padding: 10px 20px; /* Padding on top/bottom and left/right */
+    justify-content: space-between;
+    padding: 10px 20px;
     background-color: #ffffff;
-    z-index: 10; /* Ensures the header is above other content */
-    box-sizing: border-box; /* Include padding in the width calculation */
-  }
+    z-index: 1000; /* High z-index to ensure it's on top */
+    box-sizing: border-box;
+    border-bottom: 10px solid #000; /* Using black for high contrast */
+    height: 60px; /* Ensure the header has a set height */
+}
+
+/* Rest of the styles */
+
+
   
   .logo-container {
     display: flex;
