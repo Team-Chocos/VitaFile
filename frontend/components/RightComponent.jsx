@@ -27,7 +27,7 @@ const RightComponent = () => {
                     Chatbot
                 </button>
                 <button className="top-bar-button" onClick={handleActualPDFClick}>
-                    Actual PDF
+                    Actual Report
                 </button>
                 <button className="top-bar-button" onClick={handleSummarizerClick}>
                     Summarizer

@@ -1,5 +1,18 @@
 .left-container {
-    flex: 1;
-    background-color: #f0f0f0; /* Example background color */
-    /* Add more styles as needed */
-}
+    padding-top: 60px; /* Adjust based on your header height */
+    width: 50%; /* Adjust the width as needed */
+    max-height: 90vh; /* Maximum height before scrolling */
+    margin: auto; /* Center the container */
+    overflow-y: auto; /* Add vertical scroll if content exceeds height */
+    box-sizing: border-box; /* Include padding and border in the height calculation */
+  }
+  
+  /* Additional styles for the Markdown content */
+  .markdown-content {
+    padding: 20px; /* Padding around the content for spacing */
+    border: 1px solid #e0e0e0; /* Optional border for clarity */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background color for the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft box shadow */
+  }
+  
