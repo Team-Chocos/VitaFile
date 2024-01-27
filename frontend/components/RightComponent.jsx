@@ -1,9 +1,11 @@
+// RightComponent.jsx
+
 import React, { useState } from 'react';
 import ChatbotInterface from './ChatbotInterface'; // Adjust the import path as necessary
 import Summarizer from './Summarizer'; // Import the Summarizer component
 import './RightComponent.css'; // Make sure this path is correct
 
-const RightComponent = ({ chatInput, updateChatInput }) => {
+const RightComponent = ({ chatInput, updateChatInput, messages, handleSendMessage }) => {
     const [activeComponent, setActiveComponent] = useState('');
 
     const handleChatbotClick = () => {
@@ -34,7 +36,14 @@ const RightComponent = ({ chatInput, updateChatInput }) => {
                 </button>
             </div>
 
-            {activeComponent === 'chatbot' && <ChatbotInterface chatInput={chatInput} updateChatInput={updateChatInput} />}
+            {activeComponent === 'chatbot' && (
+                <ChatbotInterface 
+                    chatInput={chatInput} 
+                    updateChatInput={updateChatInput} 
+                    messages={messages} 
+                    handleSendMessage={handleSendMessage} 
+                />
+            )}
             {activeComponent === 'summarizer' && <Summarizer />}
             {activeComponent === 'pdf' && <div>Actual PDF Component Goes Here</div>}
         </div>
