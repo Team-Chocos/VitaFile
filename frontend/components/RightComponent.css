@@ -1,58 +1,50 @@
-/* RightComponent.css */
-
 .top-bar {
-    display: flex;
-    width: 100%; /* Ensures the bar takes the full width */
-    background-color: #E6E6FA; /* Lavender background for the bar */
-  }
-  
-  .top-bar-button {
-    flex-grow: 1; /* Each button grows to fill the available space */
-    padding: 15px 0; /* Padding for top and bottom, no left-right padding */
-    background-color: #E6E6FA; /* Lavender background for buttons */
-    color: #333; /* Dark text color for contrast */
-    border: none; /* Removes the border */
-    border-radius: 0; /* No rounded corners for full-width buttons */
-    cursor: pointer; /* Cursor change to indicate clickable */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    font-weight: bold; /* Bold font for button text */
-    text-align: center; /* Centers the text in the button */
-  }
-  .right-container {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 20px;
-    padding-top: 7%; /* Adjust this to account for the header space */
-    display: flex; /* Using flex to position children */
-    flex-direction: column; /* Children stacked vertically */
+  display: flex;
+  width: 100%;
+  background-color: #E6E6FA;
+}
+
+.top-bar-button {
+  flex-grow: 1;
+  padding: 15px 0;
+  background-color: #E6E6FA;
+  color: #333;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+}
+
+.right-container {
+  margin-right:20px;
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  padding-top: 7%;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-container {
   display: flex;
-  flex-direction: row; /* Align buttons side by side */
-  justify-content: space-around; /* Distribute buttons evenly */
-  align-items: center; /* Center buttons vertically */
-  margin-bottom: 20px; /* Space below the button container */
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.top-bar-button {
-  /* Rest of your button styles */
-  /* No need to set width: 100% if buttons are side by side */
+.top-bar-button:hover {
+  background-color: #D6D6F0;
 }
 
+.top-bar-button:active {
+  background-color: #C6C6E0;
+}
 
-
-  .top-bar-button:hover {
-    background-color: #D6D6F0; /* Slightly darker lavender on hover */
+@media (max-width: 600px) {
+  .top-bar-button {
+    padding: 10px 0;
   }
-  
-  .top-bar-button:active {
-    background-color: #C6C6E0; /* Even darker lavender when active */
-  }
-  
-  @media (max-width: 600px) {
-    .top-bar-button {
-      padding: 10px 0; /* Smaller padding for smaller screens */
-    }
-  }
-  
+}
