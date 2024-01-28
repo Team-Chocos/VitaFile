@@ -1,117 +1,112 @@
-/* Main layout */
-.login-page {
+header {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    height: 10%;
+    right: 0;
     display: flex;
-    height: 100vh;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid gray;
 }
 
-.left-container,
-.right-container {
-    flex: 1;
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+
+.search-input {
+    margin-left: 2%;
+    flex-grow: 1; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    background-color: #ffffff;
+    color: #333;
+    width: 100%; 
+}
+
+.search-icon {
+    width: 30px;
+    height: auto;
+    background-color: #ddd;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Styles for the left container */
-.left-container {
-    padding: 20px;
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
-.login-container {
-    max-width: 400px;
-    margin: auto;
+.date-display {
+    margin-right: 20px;
+    font-size: 16px;
 }
 
-.login-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo {
-    height: 50px; /* Adjust size as needed */
-}
-
-.logo-text h1 {
-    font-size: 2.5em;
-    color: #333;
-}
-
-/* Input fields styling */
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* Footer with buttons */
-.footer-group {
-    text-align: center;
-}
-
-.login-button, .login-button1 {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
+.icon-button {
+    background: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 5px 10px; 
+    font-size: 14px; 
 }
 
-.login-button1 {
-    background-color: #db4437; /* Google button color */
+.message-icon, .alert-icon, .exit-icon {
+    /* Add specific styles for each icon here if needed */
 }
 
-.login-button1 .logo1 {
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
 
-.signup-link {
-    color: #007bff;
-    cursor: pointer;
+.icon-button img {
+    width: 20px;
+    height: auto;
 }
+/* ... (rest of your CSS) ... */
 
-.signup-link:hover {
-    text-decoration: underline;
-}
+/* ... (rest of your CSS) ... */
 
-/* Right container with background image */
+/* ... (rest of your CSS) ... */
+
 .right-container {
-    background-image: url('../src/assets/Logo2.png'); /* Adjust the path as needed */
-    background-position: center right;
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: fixed; /* Fixed position to make it stay in place even on scroll */
+    top: 0; /* Align to the top of the viewport */
+    left: 40%; /* Align to the right of the viewport */
+    width: 60vw; /* Take up 50% of the viewport width, you can adjust this value */
+    height: 100vh; /* Take up 100% of the viewport height */
+    background-image: url('../src/assets/Logo2.png'); /* Path to your image, adjust as needed */
+    background-size: contain; /* Adjust the size of the image to be smaller and fully visible */
+    background-position: right center; /* Position the image to the right center */
+    background-repeat: no-repeat; /* Do not repeat the background image */
 }
 
-/* Responsive adjustments */
+/* ... (rest of your CSS) ... */
+
+/* Adjust for responsive design if needed */
 @media (max-width: 768px) {
-    .login-page {
-        flex-direction: column;
-    }
-
-    .left-container,
     .right-container {
-        flex: none;
-        width: 100%;
-        padding: 20px;
-    }
-
-    .right-container {
-        order: -1; /* Show image above on smaller screens */
+        width: 100vw; /* Full width on smaller screens */
+        height: 50vh; /* Adjust the height as needed */
     }
 }
+
