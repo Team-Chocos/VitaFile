@@ -3,42 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import logo from '../src/assets/Logo1.png';
 import logo1 from '../src/assets/google.png';
-import logo2 from '../src/assets/Logo2.png'; // Import the background image
+import logo2 from '../src/assets/Logo2.png';
 
 const Login = () => {
     const navigate = useNavigate();
 
-    const handleLogin = async (event) => {
+    const handleLogin = (event) => {
         event.preventDefault();
-
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-    
-        const response = await fetch('http://localhost:8000/token/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: username,
-                password: password,
-            }),
-        });
-    
-        const data = await response.json();
-    
-        if (response.ok && data.access) {
-            localStorage.setItem('token', data.access); 
-            navigate('/family');
-        }
+        navigate('/family');
     };
 
     const handleLoginNavigation = () => {
-        navigate('/signup'); // Navigate to the signup page
+        navigate('/signup');
     };
 
     return (
-        <div>
+        <div className="login-page">
             <div className="left-container">
                 <div className="login-container">
                     <div className="login-card">
@@ -50,16 +30,13 @@ const Login = () => {
                         <br />
                         <form className="login-form" onSubmit={handleLogin}>
                             <div className="input-group">
-                                <label htmlFor="username"></label>
                                 <input type="text" id="username" name="username" placeholder="Username" required />
                             </div>
                             <div className="input-group">
-                                <label htmlFor="password"></label>
                                 <input type="password" id="password" name="password" placeholder="Password" required />
                             </div>
                             <div className="footer-group">
-                                <button type="submit" className="login-button" onClick={handleLogin}>Login</button>
-                                <br />
+                                <button type="submit" className="login-button">Login</button>
                                 <div className="media-options">
                                     <button type="button" className="login-button1">
                                         <img src={logo1} className="logo1" alt="Google logo" />
@@ -73,9 +50,7 @@ const Login = () => {
                 </div>
             </div>
             <div className="right-container">
-                <div className="image-container" style={{ backgroundImage: `url(${logo2})` }}>
-                    {/* Image container content */}
-                </div>
+                {/* Right container content (if any) */}
             </div>
         </div>
     );

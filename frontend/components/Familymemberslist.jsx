@@ -44,6 +44,7 @@ const FamilyMemberList = () => {
         });
     
         setModalIsOpen(false);
+        window.location.reload();
     }
     
     const fetchMembers = async () => {
